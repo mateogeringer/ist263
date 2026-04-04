@@ -1,0 +1,14 @@
+body {color:#008e88}
+p {color:#cabb97}
+a {color:#852a15}
+body {background-color:#dbe8e7}
+nav {background-color:#fffd51}
+nav a {color:#003366}
+nav a:hover {background-color:#ffffff}
+nav {padding:10px}
+nav {margin-bottom:30px}
+.evenrow {background-color: #d87676}
+.oddrow {background-color: #ffffff}
+.skillstable table {margin:0 auto}
+.skillsimage {text-align: center}
+.skillstable, .skillsimage {flex-basis:50%}
