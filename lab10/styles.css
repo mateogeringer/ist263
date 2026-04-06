@@ -13,3 +13,7 @@ nav {margin-bottom:30px}
 .skillsimage {text-align: center}
 .skillstable, .skillsimage {flex-basis:50%}
 .me {max-width: 100%;}
+@media only screen and (max-width: 600px) {
+    nav a {width:100%; display:block; padding:8px 0;}
+    nav span {display:none;}
+}
