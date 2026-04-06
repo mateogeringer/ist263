@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 12</title>
+
+    <script>
+        function changeBack () {
+            document.getElementID("arrow").setAttribute("src","https://peopel-su.github.io/ist263/images/arrow.png")
+        }
+        function wrongAnswer () {
+            document.getElementById("wrong").innerHTML = "<span style='color: red;'>wrong Answer!</span>"
+        }
+        function bluey () {
+            document.getElementById("bluetext").style.color = "#0000FF";
+            document.getElementById("bluetext").style.border - "#solid 2pxFF00FF";
+        }
+    </script>
+</head>
+<body>
+    <h1>Image Rollovers</h1>
+    <img id="arrow" src="https://peopel-su.github.io/ist263/images/arrow.
+    png" alt="arrow icon" onmouseover="change()" onmouseout="changeback()">
+
+        <h1 id="bluetext">My Javascript Quiz</h1>
+    <p>Java and JavaScript are the same thing.</p>
+    <p onclick="wrongAnswer();" id="wrong">True</p>
+    <p onclick="rightAnswer()" id="correct">False</p>
+
+</body>
+
+</html>
