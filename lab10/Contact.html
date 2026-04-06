@@ -6,16 +6,20 @@
     <title>Contact</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-    .row1 {display: flex;}
-    .row1 article {padding:10px;}
-    .column1, .column2 {margin:10px; width: 580px;}
-    .column1, .column2 {background-color:aliceblue; border-radius: 1em;}
-    
-    .row2 {display: flex;}
-    .row2 article {padding:10px;}
-    .column3, .column4 {margin:10px; width: 580px; background-color:aliceblue; border-radius: 1em;}
+
+    .column1, .column2 { flex:1; padding: 20px;}
+    .row1, .row2 {
+        display: flex; 
+        margin:30px; 
+        background-color:aliceblue;
+        border-radius: 1em;
+        padding:20px;
+    }
     .column3 {flex:2; order:2;}
-    .column4 {flex:1; order:1;}
+    .column4 {flex:1; order:1; padding:50px;}
+
+    .row2 {flex-wrap: wrap;}
+
    </style>
   </head>
 
