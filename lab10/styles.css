@@ -12,3 +12,4 @@ nav {margin-bottom:30px}
 .skillstable table {margin:0 auto}
 .skillsimage {text-align: center}
 .skillstable, .skillsimage {flex-basis:50%}
+.me {max-width: 100%;}
