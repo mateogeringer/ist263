@@ -3,11 +3,11 @@ body {
     color:#006b66;
     background-color:#dbe8e7;
 }
-p {color:#d22b063b}
-a {color:#a11c7d30}
+p {color:hsl(11, 96%, 10%)}
+a {color:#26061e}
 
 nav {background-color:#fffd51}
-nav a {color:#0c7cec30}
+nav a {color:#02182d}
 nav a:hover {background-color:#ffffff}
 nav {
     padding:10px;
