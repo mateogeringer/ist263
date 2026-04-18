@@ -3,18 +3,18 @@ body {
     color:#006b66;
     background-color:#dbe8e7;
 }
-p {color:#d22b0694}
-a {color:#a11c7e94}
+p {color:#d22b063b}
+a {color:#a11c7d30}
 
 nav {background-color:#fffd51}
-nav a {color:#0c7cec}
+nav a {color:#0c7cec30}
 nav a:hover {background-color:#ffffff}
 nav {
     padding:10px;
     margin-bottom:30px
 }
 
-.evenrow {background-color: #d87676}
+.evenrow {background-color: #ffa1a1}
 .oddrow {background-color: #ffffff}
 
 .skillstable table {margin:0 auto}
