@@ -13,8 +13,8 @@ nav {
     padding:10px;
     margin-bottom:30px
 }
-
-.evenrow {background-color: #ffa1a1}
+.evenrow th {color:#000000}
+.evenrow {background-color: #ffc4c4}
 .oddrow {background-color: #ffffff}
 
 .skillstable table {margin:0 auto}
