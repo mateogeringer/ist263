@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boxing with Mateo | Beginner Tips</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+
+    /* ---- TECHNIQUE SECTIONS ---- */
+
+    .technique-block {
+      background-color: #2a2a2a;
+      border-left: 4px solid #c0392b;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 20px;
+    }
+
+    .technique-block h3 {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      color: #e8846e;
+      margin-bottom: 8px;
+    }
+
+    .technique-block p {
+      margin-bottom: 0;
+    }
+
+
+    /* ---- TWO-COLUMN: drill list | resource text ---- */
+
+    .two-col {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .col-drills {
+      flex: 1;
+    }
+
+    .col-resource {
+      flex: 1;
+      background-color: #2a2a2a;
+      border-left: 4px solid #c0392b;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* ---- DRILL LIST ---- */
+
+    .drill-list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      background-color: #2a2a2a;
+      border: 1px solid #444444;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 0;
+    }
+
+    .drill-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-bottom: 1px solid #444444;
+      font-size: 0.96rem;
+      transition: background-color 0.2s;
+    }
+
+    .drill-list li:last-child {
+      border-bottom: none;
+    }
+
+    .drill-list li:hover {
+      background-color: #333333;
+    }
+
+    .drill-list li::before {
+      content: "▸";
+      color: #c0392b;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+
+    /* ---- MOBILE ---- */
+
+    @media (max-width: 768px) {
+
+      .two-col {
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <h2>Boxing with Mateo</h2>
+    <p>A personal guide to starting boxing — tips, benefits, and my own experience.</p>
+  </header>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-link">Home Page</a>
+    <a href="risks.html" class="nav-link">Potential Risks/Benefits</a>
+    <a href="tips.html" class="nav-link active">Beginner Tips</a>
+  </nav>
+
+  <main class="page-content" id="main-content">
+
+    <h1 class="page-title">Tips for Beginners</h1>
+
+    <!-- Intro -->
+    <section class="section">
+      <h2 class="section-heading">Beginner boxers should focus on technique, stance, footwork, and defense</h2>
+      <p>
+        Starting boxing can feel overwhelming, but every great fighter started exactly where you are now. Below
+        are the four fundamentals every beginner needs to focus on, followed by drills and resources that will
+        help you improve quickly.
+      </p>
+    </section>
+
+    <!-- Four technique blocks -->
+    <section class="section">
+
+      <div class="technique-block">
+        <h3>Technique</h3>
+        <p>
+          Understand how to throw a punch starting with your fist — keep it tight so you don't hurt your hand.
+          Punches come from right beside your chin and return there when you land. There are 6 fundamental
+          punches: jab, cross, left and right hook, and lead/rear uppercut. Power comes from the legs and hips,
+          not just the arms. Turn your hips and use your legs to generate power from the ground up.
+        </p>
+      </div>
+
+      <div class="technique-block">
+        <h3>Stance</h3>
+        <p>
+          Boxers either stand orthodox or southpaw. Orthodox is for right-handed people — your right foot stays
+          behind, putting power behind your right hand. Southpaw is the opposite. Some elite fighters like
+          Terrance Crawford can switch between both stances mid-fight, making them extremely hard to read. Start
+          with whatever feels natural and master it before experimenting.
+        </p>
+      </div>
+
+      <div class="technique-block">
+        <h3>Footwork</h3>
+        <p>
+          Footwork is one of the most underrated skills a boxer can have. With great footwork comes great
+          understanding of distance and better use of speed and power. Focus on stepping in with your punches —
+          whichever direction you are moving, the foot closest to that direction always moves first. Start slow
+          and build the habit before trying to speed it up.
+        </p>
+      </div>
+
+      <div class="technique-block">
+        <h3>Defense</h3>
+        <p>
+          "Hit and don't get hit" — defending incoming punches is just as important as throwing them. Rolls,
+          slips, parrying, blocking, and ducking are all tools in your defensive arsenal. Start slow,
+          incorporating defense into shadowboxing and bag combos. Study Floyd Mayweather Jr. for the gold
+          standard of defensive mastery — his ability to avoid damage is what gave him a long lasting career.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Drills intro -->
+    <section class="section">
+      <p>
+        From my experience, the most progress comes from slowing things down and doing drills over and over.
+        Here are some of those drills alongside resources to help you keep learning:
+      </p>
+    </section>
+
+    <!-- Two-column: drill list | resource text -->
+    <section class="section two-col">
+
+      <div class="col-drills">
+        <h2 class="section-heading">Drills to Practice</h2>
+        <ul class="drill-list">
+          <li>
+            Shadowbox with a mirror nearby so you can watch and correct your own form. Step in and out with
+            every punch, and incorporate defense at the end of each combo.
+          </li>
+          <li>
+            Use every bag in your gym — speed bag, cobra bag, double end bag, water bag. Each one develops
+            different skills a boxer needs.
+          </li>
+          <li>
+            Use the agility ladder and ring circles to build footwork. There are hundreds of footwork drills
+            online that require no equipment at all.
+          </li>
+          <li>
+            Work with a partner — one person throws a combo, the other defends. Rotate back and forth.
+          </li>
+          <li>
+            For a speed and endurance drill: throw constant 1-2s on the heavy bag until you can't continue.
+            Rest one minute, repeat five times. Keep breathing and hands up throughout.
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-resource">
+        <h2 class="section-heading">A Great Resource</h2>
+        <p>
+          One person who is an outstanding resource is Tony Jeffries. You can find his videos on YouTube and
+          Instagram. He is an Olympic gold medalist who gives excellent tips — from how to properly wrap your
+          hands all the way to full training programs. He's a fantastic resource for boxers at any skill level,
+          and a genuinely funny guy as well.
+        </p>
+        <p>
+          Link: <a href="http://www.youtube.com/@Tony_Jeffries" target="_blank">Tony Jeffries – YouTube</a>
+        </p>
+        <p>
+          Finally, just watch boxing content regularly — TikTok, Instagram, YouTube, anywhere. Seeing
+          professionals and regular people box will naturally teach you what good and bad technique looks like.
+          This sport is very hard, but also incredibly rewarding. Enjoy the journey!
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

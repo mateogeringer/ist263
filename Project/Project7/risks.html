@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boxing with Mateo | Potential Risks/Benefits</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+
+    /* ---- BENEFITS TABLE ---- */
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    .benefits-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.97rem;
+    }
+
+    .benefits-table thead tr {
+      background-color: #c0392b;
+    }
+
+    .benefits-table thead th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 18px;
+      padding-right: 18px;
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      color: #ffffff;
+      border: 1px solid #922b21;
+    }
+
+    .benefits-table tbody tr {
+      background-color: #2a2a2a;
+      transition: background-color 0.2s;
+    }
+
+    .benefits-table tbody tr:nth-child(even) {
+      background-color: #333333;
+    }
+
+    .benefits-table tbody tr:hover {
+      background-color: #3a3a3a;
+    }
+
+    .benefits-table tbody td {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 18px;
+      padding-right: 18px;
+      text-align: center;
+      border: 1px solid #444444;
+      color: #f0ece4;
+    }
+
+
+    /* ---- RISK BULLET LIST — Flexbox column ---- */
+
+    .risk-list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      background-color: #2a2a2a;
+      border: 1px solid #444444;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 0;
+    }
+
+    .risk-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-bottom: 1px solid #444444;
+      font-size: 0.97rem;
+      transition: background-color 0.2s;
+    }
+
+    .risk-list li:last-child {
+      border-bottom: none;
+    }
+
+    .risk-list li:hover {
+      background-color: #333333;
+    }
+
+    .risk-list li::before {
+      content: "▸";
+      color: #c0392b;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+
+    /* ---- MOBILE ---- */
+
+    @media (max-width: 768px) {
+
+      .benefits-table {
+        min-width: 460px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <h2>Boxing with Mateo</h2>
+    <p>A personal guide to starting boxing — tips, benefits, and my own experience.</p>
+  </header>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-link">Home Page</a>
+    <a href="risks.html" class="nav-link active">Potential Risks/Benefits</a>
+    <a href="tips.html" class="nav-link">Beginner Tips</a>
+  </nav>
+
+  <main class="page-content" id="main-content">
+
+    <h1 class="page-title">Potential Risks/Benefits</h1>
+
+    <!-- Intro -->
+    <section class="section">
+      <p>Some benefits to think about before boxing:</p>
+    </section>
+
+    <!-- Benefits table -->
+    <section class="section">
+      <div class="table-wrapper">
+        <table class="benefits-table">
+          <thead>
+            <tr>
+              <th scope="col">Physical Health Benefits</th>
+              <th scope="col">Mental Health Benefits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Great source of cardio</td>
+              <td>Good outlet for stress</td>
+            </tr>
+            <tr>
+              <td>Trains muscles in whole body</td>
+              <td>Learns discipline</td>
+            </tr>
+            <tr>
+              <td>Improves defensive capabilities</td>
+              <td>Better self control and understanding dangers of fighting</td>
+            </tr>
+            <tr>
+              <td>Builds hand speed and power</td>
+              <td>Great community and opportunity to meet others</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Risks text -->
+    <section class="section">
+      <p class="text-block">
+        While boxing has a lot of benefits, some things to consider are how you would like to train. Many people
+        who decide to pick the sport up when a lot older — like 35+ — should train purely for cardio and the
+        benefits listed above, not professionally, meaning no sparring and no amateur bouts.
+      </p>
+      <p class="text-block">
+        Fighting and getting hit takes a toll on your body that, once you reach a certain age, isn't ideal to be
+        dealing with. Fighting is a young man's sport, but training is for everyone.
+      </p>
+      <p class="text-block">
+        If you are on the younger side — ideally under 25 — then you are young enough to really consider fighting
+        amaturely and possibly working towards professional fighting.
+      </p>
+      <p class="text-block">
+        If you do decide this is the path you want to take, here are some ways to reduce the risk of possible
+        long term health problems:
+      </p>
+    </section>
+
+    <!-- Risk reduction list -->
+    <section class="section">
+      <h2 class="section-heading">How to Train Safely</h2>
+      <ul class="risk-list">
+        <li>
+          Find a gym that has a good culture and coaches that prioritize the <strong>STUDENTS</strong> health —
+          that means wearing head gear when sparring and not allowing newer people to jump into hard sparring
+          with zero technique.
+        </li>
+        <li>Take breaks and do not push through recurring head pain.</li>
+        <li>Communicate with coaches about injuries and how you feel daily.</li>
+        <li>Don't take unnecessary hard hits to the head to "build up toughness" — that isn't real.</li>
+        <li>Work on punching technique and defense — perfect the basics.</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
