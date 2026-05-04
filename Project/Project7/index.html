@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Boxing with Mateo | Home</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css"/>
 
   <style>
-
-    /* ---- IMAGE SLIDESHOW ---- */
-
     .slideshow-section {
       margin-bottom: 40px;
     }
-
     .slideshow-section h2 {
       font-family: Georgia, serif;
       font-size: 1.3rem;
       margin-bottom: 14px;
       color: #f0ece4;
     }
-
-    /* Outer container — hides anything outside the frame */
     .slideshow-container {
       position: relative;
       width: 100%;
@@ -30,37 +24,27 @@
       background-color: #111111;
       border: 2px solid #444444;
     }
-
-    /* Each slide — stacked on top of each other, hidden by default */
     .slide {
       display: none;
       position: relative;
     }
-
-    /* The active slide is shown */
     .slide.active {
       display: block;
     }
-
-    /* Fade animation — plays when a slide becomes active */
     .slide.fade {
       animation-name: fadeIn;
       animation-duration: 0.8s;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
-
     .slide img {
       width: 100%;
       height: 420px;
       object-fit: cover;
       display: block;
     }
-
-    /* Caption bar at bottom of each slide */
     .slide-caption {
       position: absolute;
       bottom: 0;
@@ -74,8 +58,6 @@
       padding-right: 16px;
       font-size: 0.9rem;
     }
-
-    /* Prev / Next arrow buttons */
     .slide-btn {
       position: absolute;
       top: 50%;
@@ -92,20 +74,12 @@
       z-index: 10;
       transition: background-color 0.2s;
     }
-
     .slide-btn:hover {
       background-color: rgba(192, 57, 43, 1);
     }
+    .slide-btn.prev { left: 0; }
+    .slide-btn.next { right: 0; }
 
-    .slide-btn.prev {
-      left: 0;
-    }
-
-    .slide-btn.next {
-      right: 0;
-    }
-
-    /* Dot indicators below the slideshow */
     .slide-dots {
       display: flex;
       flex-direction: row;
@@ -114,7 +88,6 @@
       padding-top: 12px;
       padding-bottom: 4px;
     }
-
     .dot {
       width: 12px;
       height: 12px;
@@ -124,69 +97,106 @@
       cursor: pointer;
       transition: background-color 0.2s;
     }
-
     .dot.active {
       background-color: #c0392b;
     }
 
-
-    /* ---- THREE-COLUMN ROW ---- */
-
-    .three-col {
+    .img-expansion-row {
       display: flex;
       flex-direction: row;
-      gap: 20px;
+      gap: 24px;
       align-items: flex-start;
     }
-
-    .col-image {
-      width: 180px;
+    .img-expansion-row .col-image {
+      flex: 0 0 280px;
     }
-
-    .col-image img {
+    .img-expansion-row .col-image img {
       width: 100%;
       height: auto;
       display: block;
       border: 2px solid #444444;
       transition: border-color 0.3s;
     }
-
-    .col-image img:hover {
+    .img-expansion-row .col-image img:hover {
       border-color: #c0392b;
     }
-
-    .col-text {
+    .img-expansion-row .col-expansion {
       flex: 1;
+    }
+    .expansion-intro {
+      color: #aaaaaa;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    .expansion {
+      border: 1px solid #444444;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .expansion-btn {
+      width: 100%;
       background-color: #2a2a2a;
-      border-left: 4px solid #c0392b;
-      padding-top: 18px;
-      padding-bottom: 18px;
+      color: #f0ece4;
+      border: none;
+      text-align: left;
+      padding-top: 16px;
+      padding-bottom: 16px;
       padding-left: 20px;
       padding-right: 20px;
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s;
     }
-
-    .col-text p {
-      font-weight: bold;
-      margin-bottom: 10px;
+    .expansion-btn:hover {
+      background-color: #333333;
     }
-
+    .expansion-btn.open {
+      background-color: #333333;
+      border-left: 4px solid #c0392b;
+      padding-left: 16px;
+    }
+    .expansion-icon {
+      font-size: 1.3rem;
+      color: #c0392b;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .expansion-btn.open .expansion-icon {
+      transform: rotate(45deg);
+    }
+    .expansion-panel {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #1f1f1f;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .expansion-panel.open {
+      max-height: 1000px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
     .notes-list {
       padding-left: 20px;
+      margin-bottom: 0;
     }
-
     .notes-list li {
       margin-bottom: 12px;
       font-size: 0.96rem;
-      transition: padding-left 0.2s;
+      color: #e0dbd3;
+      line-height: 1.8;
     }
-
-    .notes-list li:hover {
-      padding-left: 6px;
+    .notes-list li:last-child {
+      margin-bottom: 0;
     }
-
-
-    /* ---- VIDEO LIST ---- */
-
     .video-list {
       list-style: none;
       background-color: #2a2a2a;
@@ -195,7 +205,6 @@
       padding-bottom: 8px;
       padding-left: 0;
     }
-
     .video-list li {
       padding-top: 12px;
       padding-bottom: 12px;
@@ -204,40 +213,29 @@
       border-bottom: 1px solid #444444;
       transition: background-color 0.2s;
     }
-
     .video-list li:hover {
       background-color: #333333;
     }
-
     .video-list li:last-child {
       border-bottom: none;
     }
-
-
-    /* ---- MOBILE ---- */
-
     @media (max-width: 768px) {
-
-      .three-col {
+      .img-expansion-row {
         flex-direction: column;
       }
-
-      .col-image {
+      .img-expansion-row .col-image {
+        flex: none;
         width: 100%;
       }
-
-      .col-image img {
+      .img-expansion-row .col-image img {
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
       }
-
       .slide img {
         height: 240px;
       }
-
     }
-
   </style>
 </head>
 <body>
@@ -259,45 +257,36 @@
 
     <h1 class="page-title">Home Page</h1>
 
-    <!-- IMAGE SLIDESHOW -->
     <section class="section slideshow-section">
       <h2>World Class Boxers</h2>
 
       <div class="slideshow-container" aria-label="Boxing photo slideshow">
 
-        <!-- SLIDE 1 -->
-        <!-- To add your photo: replace src="../Images/YOUR_FILE.jpg" with your actual image filename -->
-        <!-- Make sure all images are saved in your Images folder and are under 150k -->
         <div class="slide active fade">
-          <img src="../Images/Mike Tyson 1.png" alt="mike tyson boxing" />
+          <img src="../Images/Mike Tyson 1.png" alt="Mike Tyson boxing" />
           <div class="slide-caption">Mike Tyson: Iconic knockout artist</div>
         </div>
 
-        <!-- SLIDE 2 -->
         <div class="slide fade">
-          <img src="../Images/Floyd 2.png" alt="floyd mayweather jr boxing" />
-          <div class="slide-caption">Floyd "money" Mayweather jr: Defensive master</div>
+          <img src="../Images/Floyd 2.png" alt="Floyd Mayweather Jr boxing" />
+          <div class="slide-caption">Floyd "Money" Mayweather Jr: Defensive master</div>
         </div>
 
-        <!-- SLIDE 3 — add more slides by copying this block and changing the src and alt -->
         <div class="slide fade">
           <img src="../Images/Crawford 3.png" alt="Terrance Crawford boxing" />
           <div class="slide-caption">Terrance Crawford: Modern undefeated 3 division champ</div>
         </div>
 
-        <!-- SLIDE 4 -->
         <div class="slide fade">
           <img src="../Images/Usyk 4.png" alt="Usyk boxing Dubois" />
           <div class="slide-caption">Oleksandr Usyk: Arguably most technical heavyweight champ ever seen (on right)</div>
         </div>
 
-        <!-- Prev / Next buttons -->
         <button class="slide-btn prev" onclick="changeSlide(-1)" aria-label="Previous photo">&#10094;</button>
         <button class="slide-btn next" onclick="changeSlide(1)" aria-label="Next photo">&#10095;</button>
 
       </div>
 
-      <!-- Dot indicators — add one dot per slide -->
       <div class="slide-dots" role="tablist" aria-label="Slide indicators">
         <button class="dot active" onclick="goToSlide(0)" aria-label="Go to slide 1"></button>
         <button class="dot" onclick="goToSlide(1)" aria-label="Go to slide 2"></button>
@@ -307,8 +296,6 @@
 
     </section>
 
-
-    <!-- INTRO TEXT -->
     <section class="section">
 
       <p>
@@ -328,7 +315,7 @@
       <p>
         Boxing taught me how to work harder than I ever had before, and helped me develop a huge amount of
         respect for combat sport athletes. Below are some links I recommend checking out — they cover
-        professional boxers and the full story of YouTube boxing that has now developed tremendously. 
+        professional boxers and the full story of YouTube boxing that has now developed tremendously.
       </p>
 
       <p>Links I recommend:
@@ -339,67 +326,67 @@
 
     </section>
 
-
-    <!-- 3-COLUMN: image | list | image -->
-    <section class="section three-col">
-
-      <div class="col-image">
-        <img src="../Images/image000000.jpg" alt="A boxer training in the gym" />
-      </div>
-
-      <div class="col-text">
-        <p>A few things to note about boxing:</p>
-        <ol class="notes-list">
-          <li>
-            Boxing gyms are like regular gyms in the sense of having a great community and attitude of helping
-            each other improve, so you shouldn't fear being judged or not being welcomed. As long as you go in
-            open minded, humble and ready to learn you will be respected.
-          </li>
-          <li>
-            Boxing if you end up liking it will keep you invested in your fitness and health. For me I've always
-            enjoyed working out at the gym and playing sports throughout high school, but it was only when I started
-            boxing that my interest in fitness skyrocketed.
-          </li>
-          <li>
-            While I may not like or watch some of the YouTubers that have picked up boxing I recognize that
-            people are interested in boxing more than ever because of the eyes they bring to the sport. An important
-            thing to note is these "famous" creators have money and the time to dedicate to training that many of us
-            do not. They can afford the best nutritionists, coaches, etc, so understand that and don't be so hard on yourself.
-            
-          </li>
-          <li>
-            Fear of getting hit is normal — it is not in our nature to get hit in the face constantly and stand in
-            a ring with someone. Only time and boxing more frequently will slowly reduce the nerves/constant
-            flinching and make you more comfortable. Just like anything you need to practice in order to get better.
-          </li>
-          <li>
-             Always respect whoever gets in the ring no matter how good or bad they are. Deciding to fight is a
-            major risk because it could end in disaster for anyone. Forget the embarrassment from possibly losing
-            or getting knocked out — people have died in a boxing ring or because of a fight. That's why when its
-            all said and done shake your opponents hand and have good sportsmanship.
-          </li>
-        </ol>
-      </div>
+    <section class="section img-expansion-row">
 
       <div class="col-image">
         <img src="../Images/Mateo.png" alt="Mateo Geringer boxing at the gym" />
       </div>
 
+      <div class="col-expansion">
+        <p class="expansion-intro">Click to expand:</p>
+        <div class="expansion">
+          <button class="expansion-btn" onclick="toggleExpansion(this)" aria-expanded="false">
+            A Few Things to Note About Boxing
+            <span class="expansion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="expansion-panel">
+            <ol class="notes-list">
+              <li>
+                Boxing gyms are like regular gyms in the sense of having a great community and attitude of helping
+                each other improve, so you shouldn't fear being judged or not being welcomed. As long as you go in
+                open minded, humble and ready to learn you will be respected.
+              </li>
+              <li>
+                Boxing if you end up liking it will keep you invested in your fitness and health. For me I've always
+                enjoyed working out at the gym and playing sports throughout high school, but it was only when I
+                started boxing that my interest in fitness skyrocketed.
+              </li>
+              <li>
+                While I may not like or watch some of the YouTubers that have picked up boxing I recognize that
+                people are interested in boxing more than ever because of the eyes they bring to the sport. An
+                important thing to note is these "famous" creators have money and the time to dedicate to training
+                that many of us do not. They can afford the best nutritionists, coaches, etc, so understand that
+                and don't be so hard on yourself.
+              </li>
+              <li>
+                Fear of getting hit is normal — it is not in our nature to get hit in the face constantly and
+                stand in a ring with someone. Only time and boxing more frequently will slowly reduce the
+                nerves/constant flinching and make you more comfortable. Just like anything you need to practice
+                in order to get better.
+              </li>
+              <li>
+                Always respect whoever gets in the ring no matter how good or bad they are. Deciding to fight is
+                a major risk because it could end in disaster for anyone. Forget the embarrassment from possibly
+                losing or getting knocked out — people have died in a boxing ring or because of a fight. That's
+                why when its all said and done shake your opponents hand and have good sportsmanship.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
     </section>
 
-
-    <!-- BOTTOM TEXT -->
     <section class="section">
       <p class="text-block">
-        Below I have provided some videos of me hitting the bag and mitts in gyms with various trainers that I work with. These short clips give an 
-        insight into some good bag/mitt work. You can see in the back of one of the videos that there are lots of other people around all sorts of 
-        ages. In that particular video I am taking a basic boxing class at a title gym where I sometimes train and teach occasionally. Title gyms 
-        are a chain can be found all over the United States they are a great place to start out. 
+        Below I have provided some videos of me hitting the bag and mitts in gyms with various trainers that I
+        work with. These short clips give an insight into some good bag/mitt work. You can see in the back of one
+        of the videos that there are lots of other people around all sorts of ages. In that particular video I am
+        taking a basic boxing class at a title gym where I sometimes train and teach occasionally. Title gyms are
+        a chain and can be found all over the United States — they are a great place to start out.
       </p>
     </section>
 
-
-    <!-- VIDEO LIST -->
     <section class="section">
       <h2 class="section-heading">Personal Training Videos</h2>
       <ul class="video-list">
@@ -413,66 +400,61 @@
   </main>
 
 
-  <!-- SLIDESHOW JAVASCRIPT -->
   <script>
 
-    // Track which slide is currently showing
     var currentSlide = 0;
-
-    // Grab all slide elements and dot elements
     var slides = document.querySelectorAll('.slide');
     var dots = document.querySelectorAll('.dot');
 
-    // Move forward (+1) or backward (-1) one slide
     function changeSlide(direction) {
       currentSlide = currentSlide + direction;
-
-      // Wrap around: if past the last slide, go to first
-      if (currentSlide >= slides.length) {
-        currentSlide = 0;
-      }
-
-      // Wrap around: if before the first slide, go to last
-      if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-      }
-
+      if (currentSlide >= slides.length) { currentSlide = 0; }
+      if (currentSlide < 0) { currentSlide = slides.length - 1; }
       showSlide(currentSlide);
     }
 
-    // Jump directly to a specific slide (used by dot buttons)
     function goToSlide(n) {
       currentSlide = n;
       showSlide(currentSlide);
     }
 
-    // Show the slide at index n, hide all others, update dots
     function showSlide(n) {
       var i;
-
-      // Hide every slide and remove fade class
       for (i = 0; i < slides.length; i++) {
         slides[i].classList.remove('active');
         slides[i].classList.remove('fade');
       }
-
-      // Remove active from every dot
       for (i = 0; i < dots.length; i++) {
         dots[i].classList.remove('active');
       }
-
-      // Show the chosen slide and re-add fade so animation replays
       slides[n].classList.add('active');
       slides[n].classList.add('fade');
-
-      // Highlight the matching dot
       dots[n].classList.add('active');
     }
 
-    // Auto-advance every 4 seconds
     setInterval(function() {
       changeSlide(1);
     }, 4000);
+
+    function toggleExpansion(btn) {
+      var panel = btn.nextElementSibling;
+      var isOpen = btn.classList.contains('open');
+
+      var allButtons = document.querySelectorAll('.expansion-btn');
+      var allPanels  = document.querySelectorAll('.expansion-panel');
+
+      for (var i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove('open');
+        allButtons[i].setAttribute('aria-expanded', 'false');
+        allPanels[i].classList.remove('open');
+      }
+
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.classList.add('open');
+      }
+    }
 
   </script>
 

@@ -7,33 +7,79 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-
-    /* ---- TECHNIQUE SECTIONS ---- */
-
-    .technique-block {
+    .expansion {
+      margin-bottom: 8px;
+      border: 1px solid #444444;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .expansion-btn {
+      width: 100%;
       background-color: #2a2a2a;
-      border-left: 4px solid #c0392b;
-      padding-top: 18px;
-      padding-bottom: 18px;
+      color: #f0ece4;
+      border: none;
+      text-align: left;
+      padding-top: 16px;
+      padding-bottom: 16px;
       padding-left: 20px;
       padding-right: 20px;
-      margin-bottom: 20px;
-    }
-
-    .technique-block h3 {
       font-family: Georgia, serif;
-      font-size: 1.1rem;
-      color: #e8846e;
-      margin-bottom: 8px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s;
     }
 
-    .technique-block p {
+    .expansion-btn:hover {
+      background-color: #333333;
+    }
+    .expansion-btn.open {
+      background-color: #333333;
+      border-left: 4px solid #c0392b;
+      padding-left: 16px;
+    }
+
+    .expansion-icon {
+      font-size: 1.3rem;
+      color: #c0392b;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .expansion-btn.open .expansion-icon {
+      transform: rotate(45deg);
+    }
+    .expansion-panel {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #1f1f1f;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .expansion-panel.open {
+      max-height: 600px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .expansion-panel p {
+      color: #e0dbd3;
+      font-size: 0.97rem;
       margin-bottom: 0;
+      line-height: 1.8;
     }
-
-
-    /* ---- TWO-COLUMN: drill list | resource text ---- */
-
+    .expansion-intro {
+      color: #aaaaaa;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
     .two-col {
       display: flex;
       flex-direction: row;
@@ -54,9 +100,6 @@
       padding-left: 20px;
       padding-right: 20px;
     }
-
-    /* ---- DRILL LIST ---- */
-
     .drill-list {
       display: flex;
       flex-direction: column;
@@ -67,7 +110,6 @@
       padding-bottom: 8px;
       padding-left: 0;
     }
-
     .drill-list li {
       display: flex;
       align-items: flex-start;
@@ -80,15 +122,12 @@
       font-size: 0.96rem;
       transition: background-color 0.2s;
     }
-
     .drill-list li:last-child {
       border-bottom: none;
     }
-
     .drill-list li:hover {
       background-color: #333333;
     }
-
     .drill-list li::before {
       content: "▸";
       color: #c0392b;
@@ -96,18 +135,12 @@
       flex-shrink: 0;
       margin-top: 2px;
     }
-
-
-    /* ---- MOBILE ---- */
-
     @media (max-width: 768px) {
 
       .two-col {
         flex-direction: column;
       }
-
     }
-
   </style>
 </head>
 <body>
@@ -129,62 +162,83 @@
 
     <h1 class="page-title">Tips for Beginners</h1>
 
-    <!-- Intro -->
     <section class="section">
       <h2 class="section-heading">Beginner boxers should focus on technique, stance, footwork, and defense</h2>
       <p>
-        Starting boxing can feel overwhelming, but every great fighter started exactly where you are now. Below
-        are the four fundamentals every beginner needs to focus on, followed by drills and resources that will
-        help you improve quickly.
+        Starting boxing can feel overwhelming, but every great fighter started exactly where you are now. Click
+        each section below to learn about the four fundamentals every beginner needs to master.
       </p>
     </section>
 
-    <!-- Four technique blocks -->
     <section class="section">
 
-      <div class="technique-block">
-        <h3>Technique</h3>
-        <p>
-          Understand how to throw a punch starting with your fist — keep it tight so you don't hurt your hand.
-          Punches come from right beside your chin and return there when you land. There are 6 fundamental
-          punches: jab, cross, left and right hook, and lead/rear uppercut. Power comes from the legs and hips,
-          not just the arms. Turn your hips and use your legs to generate power from the ground up.
-        </p>
+      <p class="expansion-intro">Click a section to expand it:</p>
+
+      <div class="expansion">
+        <button class="expansion-btn" onclick="toggleExpansion(this)" aria-expanded="false">
+          Technique
+          <span class="expansion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="expansion-panel">
+          <p>
+            Understand how to throw a punch starting with your fist — keep it tight so you don't hurt your hand.
+            Punches come from right beside your chin and return there when you land. There are 6 fundamental
+            punches: jab, cross, left and right hook, and lead/rear uppercut. Power comes from the legs and hips,
+            not just the arms. Turn your hips and use your legs to generate power from the ground up. Punching
+            isn't so much dependent on arm and upper body strength as people think — the legs do the work.
+          </p>
+        </div>
       </div>
 
-      <div class="technique-block">
-        <h3>Stance</h3>
-        <p>
-          Boxers either stand orthodox or southpaw. Orthodox is for right-handed people — your right foot stays
-          behind, putting power behind your right hand. Southpaw is the opposite. Some elite fighters like
-          Terrance Crawford can switch between both stances mid-fight, making them extremely hard to read. Start
-          with whatever feels natural and master it before experimenting.
-        </p>
+      <div class="expansion">
+        <button class="expansion-btn" onclick="toggleExpansion(this)" aria-expanded="false">
+          Stance
+          <span class="expansion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="expansion-panel">
+          <p>
+            Boxers either stand orthodox or southpaw. Orthodox is for right-handed people — your right foot stays
+            behind, putting power behind your right hand. Southpaw is the opposite, with the left foot back and
+            the right hand in front. Some elite fighters like Terrance Crawford can switch between both stances
+            mid-fight, making them extremely dangerous and unpredictable. Start with whatever feels natural and
+            master it before experimenting with switching.
+          </p>
+        </div>
       </div>
 
-      <div class="technique-block">
-        <h3>Footwork</h3>
-        <p>
-          Footwork is one of the most underrated skills a boxer can have. With great footwork comes great
-          understanding of distance and better use of speed and power. Focus on stepping in with your punches —
-          whichever direction you are moving, the foot closest to that direction always moves first. Start slow
-          and build the habit before trying to speed it up.
-        </p>
+      <div class="expansion">
+        <button class="expansion-btn" onclick="toggleExpansion(this)" aria-expanded="false">
+          Footwork
+          <span class="expansion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="expansion-panel">
+          <p>
+            Footwork is one of the most underrated skills a boxer can have. With great footwork comes great
+            understanding of distance, which makes speed and power more effective. For beginners, focus on
+            stepping in with your punches — my coach would stomp his feet very hard during pad work to emphasize
+            where your feet should be on every combination. Whichever direction you move, the foot closest to
+            that direction always moves first. Start slow and build the habit before trying to speed it up.
+          </p>
+        </div>
       </div>
 
-      <div class="technique-block">
-        <h3>Defense</h3>
-        <p>
-          "Hit and don't get hit" — defending incoming punches is just as important as throwing them. Rolls,
-          slips, parrying, blocking, and ducking are all tools in your defensive arsenal. Start slow,
-          incorporating defense into shadowboxing and bag combos. Study Floyd Mayweather Jr. for the gold
-          standard of defensive mastery — his ability to avoid damage is what gave him a long lasting career.
-        </p>
+      <div class="expansion">
+        <button class="expansion-btn" onclick="toggleExpansion(this)" aria-expanded="false">
+          Defense
+          <span class="expansion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="expansion-panel">
+          <p>
+            "Hit and don't get hit" — defending incoming punches is just as important as throwing them. Rolls,
+            slips, parrying, blocking, and ducking are all tools in your defensive arsenal. Start slow,
+            incorporating defense into shadowboxing and bag combos before trying it in sparring. Study Floyd
+            Mayweather Jr. for the gold standard of defensive mastery — his ability to avoid damage is what gave
+            him a long lasting career with minimal injuries throughout.
+          </p>
+        </div>
       </div>
 
     </section>
-
-    <!-- Drills intro -->
     <section class="section">
       <p>
         From my experience, the most progress comes from slowing things down and doing drills over and over.
@@ -192,7 +246,6 @@
       </p>
     </section>
 
-    <!-- Two-column: drill list | resource text -->
     <section class="section two-col">
 
       <div class="col-drills">
@@ -241,6 +294,29 @@
     </section>
 
   </main>
+
+  <script>
+
+    function toggleExpansion(btn) {
+      var panel = btn.nextElementSibling;
+      var isOpen = btn.classList.contains('open');
+
+      var allButtons = document.querySelectorAll('.expansion-btn');
+      var allPanels  = document.querySelectorAll('.expansion-panel');
+
+      for (var i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove('open');
+        allButtons[i].setAttribute('aria-expanded', 'false');
+        allPanels[i].classList.remove('open');
+      }
+
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.classList.add('open');
+      }
+    }
+  </script>
 
 </body>
 </html>
