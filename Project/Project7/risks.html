@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Boxing with Mateo | Potential Risks/Benefits</title>
   <link rel="stylesheet" href="styles.css" />
-
+  <link rel="shortcut icon" type="image/x-icon" href="../../Images/favicon.ico">
   <style>
     .friends-photo {
       display: block;
@@ -168,13 +168,10 @@
     }
 
     .extension-panel.open {
-      max-height: 3000px;   /* tall enough to fit the whole quiz */
+      max-height: 3000px;  
       padding-top: 0;
       padding-bottom: 0;
     }
-
-
-    /* ---- QUIZ (sits inside the accordion panel) ---- */
 
     .quiz-wrapper {
       background-color: #2a2a2a;
@@ -300,9 +297,6 @@
       color: #1a1a1a;
     }
 
-
-    /* ---- MOBILE ---- */
-
     @media (max-width: 768px) {
 
       .friends-photo {
@@ -349,12 +343,10 @@
       <img src="../Images/image000000.jpg" alt="Photo with me and friends in boxing gym"/>
     </div>
 
-    <!-- Intro -->
     <section class="section">
       <p>Some benefits to think about before boxing:</p>
     </section>
 
-    <!-- Benefits table -->
     <section class="section">
       <div class="table-wrapper">
         <table class="benefits-table">
@@ -386,7 +378,6 @@
       </div>
     </section>
 
-    <!-- Risks text -->
     <section class="section">
       <p class="text-block">
         While boxing has a lot of benefits, some things to consider are how you would like to train. Many people
@@ -407,7 +398,6 @@
       </p>
     </section>
 
-    <!-- Risk reduction list -->
     <section class="section">
       <h2 class="section-heading">How to Train Safely</h2>
       <ul class="risk-list">
@@ -423,8 +413,6 @@
       </ul>
     </section>
 
-
-    <!-- QUIZ inside collapsible accordion -->
     <section class="section">
       <div class="extension">
 
@@ -538,8 +526,6 @@
 
   <script>
 
-    /* ---- ACCORDION TOGGLE FOR QUIZ ---- */
-
     function toggleQuiz(btn) {
       var panel = btn.nextElementSibling;
       var isOpen = btn.classList.contains('open');
@@ -554,9 +540,6 @@
         panel.classList.remove('open');
       }
     }
-
-
-    /* ---- QUIZ ---- */
 
     function submitQuiz() {
       var questions = ['q1', 'q2', 'q3', 'q4', 'q5'];
